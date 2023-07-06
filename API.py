@@ -1,7 +1,7 @@
 import datetime
 import requests
 import json
-import pickle
+import pickle5 as pickle
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import time
@@ -74,8 +74,8 @@ def get_coords(address):
 
 
 # --------------------------------- Get location of park -------------------------------
-with open(CURRENT_LOCATION_DATA, 'rb') as handle:
-    location_data = pickle.load(handle)
+with open(CURRENT_LOCATION_DATA, 'rb') as f:
+    location_data = pickle.load(f)
 
 
 def location_finder(park):
