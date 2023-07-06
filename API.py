@@ -6,6 +6,9 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import time
 
+CURRENT_LOCATION_DATA = "locationData-2023-06-15-2.pickle"
+CURRENT_AUTH_FILE = "auth.json"
+
 
 app = Flask(__name__)
 CORS(app, resources={r"/campsites": {"origins": "*"}})
@@ -14,7 +17,7 @@ delay = 0
 
 # ------------------- Prompt user for location data-------------------
 # import secret keys
-with open("auth.json", "r") as file:
+with open(CURRENT_AUTH_FILE, "r") as file:
     data = json.load(file)
 
 # set up ors calls
@@ -71,7 +74,7 @@ def get_coords(address):
 
 
 # --------------------------------- Get location of park -------------------------------
-with open(r'/home/peter/Documents/Code/BC-Parks/BC-PARKS-CLI/locationData-2023-06-15-2.pickle', 'rb') as handle:
+with open(CURRENT_LOCATION_DATA, 'rb') as handle:
     location_data = pickle.load(handle)
 
 
