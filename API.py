@@ -10,7 +10,7 @@ import ssl
 
 CURRENT_LOCATION_DATA = "locationData-2023-06-15-2.pickle"
 CURRENT_AUTH_FILE = "auth.json"
-SSL_CERT = "cert.crt"
+SSL_CERT = "certificate.crt"
 PRIVATE_KEY = "private.key"
 
 
