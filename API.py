@@ -85,7 +85,9 @@ def location_finder(park):
     except KeyError:
         raise KeyError(f"Location data not found for park: {park}")
 
-
+@app.route('/version', methods=['GET'])
+def get_version():
+    return "0.0.1"
 @app.route('/campsites', methods=['POST'])
 def get_campsites():
     global delay
