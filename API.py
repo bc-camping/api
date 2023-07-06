@@ -5,9 +5,13 @@ import pickle5 as pickle
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import time
+import ssl
+
 
 CURRENT_LOCATION_DATA = "locationData-2023-06-15-2.pickle"
 CURRENT_AUTH_FILE = "auth.json"
+SSL_CERT = "cert.crt"
+PRIVATE_KEY = "private.key"
 
 
 app = Flask(__name__)
@@ -150,4 +154,6 @@ def get_campsites():
 
 
 if __name__ == '__main__':
-    app.run()
+    ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS)
+    ssl_context.load_cert_chain(certfile=SSL_CERT, keyfile=PRIVATE_KEY)
+    app.run(ssl_context=ssl_context)
