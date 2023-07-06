@@ -14,7 +14,7 @@ delay = 0
 
 # ------------------- Prompt user for location data-------------------
 # import secret keys
-with open("/home/peter/Documents/Code/BC-Parks/BC-PARKS-CLI/auth.json", "r") as file:
+with open("auth.json", "r") as file:
     data = json.load(file)
 
 # set up ors calls
