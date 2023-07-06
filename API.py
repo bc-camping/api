@@ -154,6 +154,6 @@ def get_campsites():
 
 
 if __name__ == '__main__':
-    ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS)
+    ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
     ssl_context.load_cert_chain(certfile=SSL_CERT, keyfile=PRIVATE_KEY)
     app.run(ssl_context=ssl_context)
